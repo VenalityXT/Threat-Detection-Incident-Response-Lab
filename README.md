@@ -8,7 +8,6 @@
 ![InstalledSOAR_6](https://github.com/user-attachments/assets/d7830667-295d-4e72-8fcc-a1f11b464e7e)
 ![StartPhantomService_7](https://github.com/user-attachments/assets/b1b2fef5-89e8-47d1-801e-9d3e1866cc67)
 ![SOARLogin](https://github.com/user-attachments/assets/730b2915-c0fa-41e5-8d07-cc2b97090093)
-![DownloadingSplunkAppInSplunkSOAR_1](https://github.com/user-attachments/assets/52c3d9cb-fce2-407e-97ef-42e4056620ac)
 ![InstallAppSplunkSoar_1](https://github.com/user-attachments/assets/dcf4d8d9-979c-4ada-96f7-1e33df34b18e)
 ![DownloadSplunkAppForSOAR_2](https://github.com/user-attachments/assets/90eea84c-e7f9-4ed9-867e-d6c29eefaa51)
 
