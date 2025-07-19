@@ -61,25 +61,25 @@ Each phase, from attack simulation to automated remediation, is supported by mod
 ---
 
 ## Repository Structure
-Threat-Detection-Lab/
-├── detections/ # Custom correlation rules and search queries
-│ ├── brute_force_detection.md
-│ └── suspicious_login_alert.md
-├── playbooks/ # SOAR playbooks (Python / PowerShell)
-│ ├── enrich_ip_playbook.py
-│ └── isolate_host_playbook.ps1
-├── documentation/ # Reports, compliance artifacts, MITRE mappings
-│ ├── incident_report_template.docx
-│ └── log_retention_policy.md
-├── attack-scenarios/ # Steps/scripts to simulate attacks on endpoints
-│ ├── brute_force_simulation.sh
-│ └── lateral_movement_scenario.ps1
-├── threat-intel/ # Scripts and integrations for enrichment
-│ └── virustotal_lookup.py
-├── assets/ # [Insert Image Here] Diagrams, screenshots
-│ └── splunk_dashboard_example.png
-├── README.md # Project overview (this file)
-└── detections/README.md # Detailed detection logic and rationale
+Threat-Detection-Lab/                                                                                                                                                           
+├── detections/ # Custom correlation rules and search queries                                                                                                                                                           
+│ ├── brute_force_detection.md                                                                                                                                                           
+│ └── suspicious_login_alert.md                                                                                                                                                           
+├── playbooks/ # SOAR playbooks (Python / PowerShell)                                                                                                                                                           
+│ ├── enrich_ip_playbook.py                                                                                                                                                           
+│ └── isolate_host_playbook.ps1                                                                                                                                                           
+├── documentation/ # Reports, compliance artifacts, MITRE mappings                                                                                                                                                           
+│ ├── incident_report_template.docx                                                                                                                                                           
+│ └── log_retention_policy.md                                                                                                                                                           
+├── attack-scenarios/ # Steps/scripts to simulate attacks on endpoints                                                                                                                                                           
+│ ├── brute_force_simulation.sh                                                                                                                                                           
+│ └── lateral_movement_scenario.ps1                                                                                                                                                           
+├── threat-intel/ # Scripts and integrations for enrichment                                                                                                                                                           
+│ └── virustotal_lookup.py                                                                                                                                                           
+├── assets/ # [Insert Image Here] Diagrams, screenshots                                                                                                                                                           
+│ └── splunk_dashboard_example.png                                                                                                                                                           
+├── README.md # Project overview (this file)                                                                                                                                                           
+└── detections/README.md # Detailed detection logic and rationale                                                                                                                                                           
 
 ---
 
