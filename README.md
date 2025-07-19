@@ -1,4 +1,4 @@
-# Threat Detection & Incident Response Lab: Splunk + SOAR Integration
+# Threat Detection & Incident Response Lab with Splunk and SOAR
 
 [![Splunk](https://img.shields.io/badge/Tool-Splunk-black?logo=splunk)](https://www.splunk.com/)
 [![SOAR](https://img.shields.io/badge/Tool-Splunk%20SOAR-black?logo=splunk)](https://www.splunk.com/en_us/software/soar.html)
