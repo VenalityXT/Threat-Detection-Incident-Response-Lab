@@ -130,27 +130,33 @@ The project is designed to mirror real incident response operations and follows 
 ---
 
 ## Repository Structure
+```
 Threat-Detection-Lab/
+
 ├── detections/
 │ ├── brute_force_detection.md
 │ └── lateral_movement_query.md
+
 ├── playbooks/
 │ ├── enrich_ip_playbook.py
 │ └── isolate_host_playbook.ps1
+
 ├── attack-scenarios/
 │ ├── simulate_brute_force.ps1
 │ └── invoke_lateral_move.sh
+
 ├── threat-intel/
 │ ├── virustotal_lookup.py
 │ └── abuseipdb_check.py
+
 ├── documentation/
 │ ├── incident_template.md
 │ ├── MITRE_mapping.md
 │ └── log_retention_policy.md
-├── assets/
-│ └── [Insert Image Here]
+
 ├── README.md
 └── LICENSE
+```
 
 ---
 
