@@ -12,15 +12,15 @@
 
 ---
 
-## 📘 Overview
+## Overview
 
 This project simulates real-world cyber threats in a controlled lab environment and demonstrates how to detect, investigate, and respond to them using **Splunk (SIEM)** and **SOAR (Security Orchestration, Automation, and Response)** tools. The lab incorporates endpoint logging, scripted automation, threat intelligence enrichment, and compliance alignment with security frameworks.
 
-Each phase—from attack simulation to automated remediation—is supported by modular scripts and visualizations. A series of detailed sub-READMEs accompany this repository to explain the configurations, detection logic, and scripting methodologies used throughout the project.
+Each phase, from attack simulation to automated remediation, is supported by modular scripts and visualizations. A series of detailed sub-READMEs accompany this repository to explain the configurations, detection logic, and scripting methodologies used throughout the project.
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Deploy a realistic detection and response environment.
 - Simulate cyber attacks against Windows/Linux hosts.
@@ -32,7 +32,7 @@ Each phase—from attack simulation to automated remediation—is supported by m
 
 ---
 
-## 🛠️ Skills Demonstrated
+## Skills Learned
 
 - **SIEM Monitoring & Log Correlation**  
   *Built dashboards and detection rules in Splunk using event correlation from Sysmon and Winlogbeat data.*
@@ -60,7 +60,7 @@ Each phase—from attack simulation to automated remediation—is supported by m
 
 ---
 
-## 🧭 Repository Structure
+## Repository Structure
 Threat-Detection-Lab/
 ├── detections/ # Custom correlation rules and search queries
 │ ├── brute_force_detection.md
@@ -83,7 +83,7 @@ Threat-Detection-Lab/
 
 ---
 
-## 🔎 Tools Used
+## Tools Used
 
 - **SIEM**: Splunk Free or Splunk Cloud Trial  
 - **SOAR**: Splunk SOAR Community Edition, Shuffle (optional)  
@@ -94,7 +94,7 @@ Threat-Detection-Lab/
 
 ---
 
-## 📌 Recommendations for Future Enhancements
+## Recommendations for Future Enhancements
 
 - Integrate endpoint EDR solutions like CrowdStrike or Microsoft Defender ATP for enhanced telemetry.
 - Expand SOAR playbooks to cover containment and recovery phases.
@@ -104,6 +104,6 @@ Threat-Detection-Lab/
 
 ---
 
-> 🔍 Each major folder includes its own `README.md` explaining setup, logic, and configuration decisions in depth. This main README provides a high-level summary for recruiters, collaborators, and project reviewers.
+> Each major folder includes its own `README.md` explaining setup, logic, and configuration decisions in depth. This main README provides a high-level summary for recruiters, collaborators, and project reviewers.
 
 
