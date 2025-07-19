@@ -1,9 +1,9 @@
-# Threat Detection & Incident Response Lab with Splunk and SOAR
+# Threat Detection & Incident Response Lab: Splunk + SOAR Integration
 
 [![Splunk](https://img.shields.io/badge/Tool-Splunk-black?logo=splunk)](https://www.splunk.com/)
 [![SOAR](https://img.shields.io/badge/Tool-Splunk%20SOAR-black?logo=splunk)](https://www.splunk.com/en_us/software/soar.html)
 [![Python](https://img.shields.io/badge/Language-Python-blue?logo=python)](https://www.python.org/)
-[![PowerShell](https://img.shields.io/badge/Scripting-PowerShell-blue?logo=powershell)](https://docs.microsoft.com/en-us/powershell/)
+[![PowerShell](https://img.shields.io/badge/Scripting-PowerShell-blue?logo=powershell)](https://learn.microsoft.com/en-us/powershell/)
 [![Sysmon](https://img.shields.io/badge/Tool-Sysmon-blue)](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
 [![Winlogbeat](https://img.shields.io/badge/Tool-Winlogbeat-orange)](https://www.elastic.co/beats/winlogbeat)
 [![MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-red)](https://attack.mitre.org/)
@@ -12,98 +12,159 @@
 
 ---
 
-## Overview
+## Table of Contents
 
-This project simulates real-world cyber threats in a controlled lab environment and demonstrates how to detect, investigate, and respond to them using **Splunk (SIEM)** and **SOAR (Security Orchestration, Automation, and Response)** tools. The lab incorporates endpoint logging, scripted automation, threat intelligence enrichment, and compliance alignment with security frameworks.
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Objectives](#objectives)
+- [Key Achievements](#key-achievements)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Lab Design Overview](#lab-design-overview)
+- [Detection & Response Workflow](#detection--response-workflow)
+- [Repository Structure](#repository-structure)
+- [Recommendations for Future Enhancements](#recommendations-for-future-enhancements)
+- [License](#license)
 
-Each phase, from attack simulation to automated remediation, is supported by modular scripts and visualizations. A series of detailed sub-READMEs accompany this repository to explain the configurations, detection logic, and scripting methodologies used throughout the project.
+---
+
+## Project Overview
+
+This lab simulates real-world cybersecurity threats and demonstrates how to detect, investigate, and respond using **Splunk** as a SIEM and **SOAR** for automated workflows. Simulated attack scenarios generate rich host-level telemetry, while automated playbooks triage alerts and enrich findings using threat intelligence sources.
+
+The project is designed to mirror real incident response operations and follows best practices aligned with frameworks like **MITRE ATT&CK** and **NIST**.
+
+---
+
+## Technologies Used
+
+- **Splunk Enterprise (Trial)** – SIEM and log aggregation
+- **Splunk SOAR (Community Edition)** – Automated playbook response
+- **Sysmon + Winlogbeat** – Endpoint event generation and forwarding
+- **Python / PowerShell** – Custom SOAR scripting and attack simulation
+- **VirusTotal, AbuseIPDB** – Threat intelligence enrichment APIs
+- **VirtualBox / VMs** – Windows and Linux virtual machines
+- **MITRE ATT&CK Framework** – Attack mapping and detection planning
 
 ---
 
 ## Objectives
 
-- Deploy a realistic detection and response environment.
-- Simulate cyber attacks against Windows/Linux hosts.
-- Correlate logs and detect malicious behaviors using Splunk.
-- Automate investigation and response with SOAR playbooks.
-- Enrich threat context via external intelligence sources.
-- Map activities to the MITRE ATT&CK framework.
-- Document procedures for reporting and compliance reviews.
+- Simulate real-world cyber attacks in a virtual lab
+- Detect malicious behavior using Splunk dashboards and correlation rules
+- Automate parts of the response process using SOAR playbooks
+- Enrich indicators with threat intelligence sources
+- Create reusable documentation and modular detection logic
+- Map detection logic to ATT&CK tactics, techniques, and procedures (TTPs)
+- Demonstrate compliance best practices (e.g., log retention policies)
 
 ---
 
-## Skills Learned
+## Key Achievements
 
-- **SIEM Monitoring & Log Correlation**  
-  *Built dashboards and detection rules in Splunk using event correlation from Sysmon and Winlogbeat data.*
+- **Built a complete Splunk + SOAR detection and response pipeline**  
+  *Aggregated logs using Winlogbeat and correlated them using custom queries and dashboards within Splunk.*
 
-- **Incident Response & Threat Detection**  
-  *Simulated adversary behaviors and manually triaged logs to identify indicators and alert patterns.*
+- **Mapped attack scenarios to MITRE ATT&CK TTPs**  
+  *Simulated events like brute-force, lateral movement, and privilege escalation; each detection rule linked to corresponding ATT&CK tactics.*
 
-- **Scripting & Automation**  
-  *Developed Python and PowerShell-based SOAR playbooks to automate threat enrichment, ticketing, and response tasks.*
+- **Developed automated response playbooks using SOAR**  
+  *Created modular Python and PowerShell scripts that enrich IPs, trigger alerts, and simulate containment.*
 
-- **Security Documentation & Reporting**  
-  *Generated incident response write-ups, detection signatures, and remediation workflows.*
+- **Integrated threat intelligence sources into investigation workflows**  
+  *Connected SOAR actions to VirusTotal and AbuseIPDB for IOC reputation lookups.*
 
-- **Governance, Risk & Compliance**  
-  *Applied mock retention policies and NIST-aligned compliance controls across the lab environment.*
+- **Documented detection logic and incident response workflows**  
+  *Included markdown-based reports for each detection scenario, response logic, and playbook breakdown.*
 
-- **MITRE ATT&CK Mapping**  
-  *Mapped detection rules and alerting logic to relevant ATT&CK TTPs.*
+---
 
-- **Threat Intelligence Integration**  
-  *Used VirusTotal and AbuseIPDB APIs to enrich indicators and confirm malicious activity.*
+## Skills Demonstrated
+
+- **SIEM Engineering and Log Correlation**  
+  *Built custom dashboards, detection queries, and alerting logic in Splunk.*
+
+- **Incident Response and Attack Simulation**  
+  *Manually triggered suspicious behavior in lab VMs and verified detection across Splunk and SOAR.*
+
+- **Scripting and Automation**  
+  *Developed scripts to perform lookups, isolate hosts, and generate structured responses.*
+
+- **Security Documentation and Audit Readiness**  
+  *Created detailed write-ups for detection methods, SOAR logic, and lab artifacts aligned with NIST controls.*
+
+- **Threat Intelligence and IOC Enrichment**  
+  *Queried reputation services to validate indicators and feed contextual data into alert workflows.*
 
 - **Operating System Internals**  
-  *Executed and analyzed host-based attacks on both Windows and Linux to generate meaningful logs.*
+  *Analyzed Sysmon logs for process execution, network connections, and file manipulations.*
+
+---
+
+## Lab Design Overview
+
+- **Endpoint Logging**: Sysmon + Winlogbeat on Windows VMs, shipped to Splunk via HTTP Event Collector
+- **SIEM**: Splunk queries and dashboards developed for detection scenarios (brute-force, suspicious logins, PowerShell abuse)
+- **SOAR**: Splunk SOAR playbooks respond to specific alert types, with automated enrichment, tagging, and response simulation
+- **Simulated Attacks**: Performed via PowerShell, Kali Linux, and native Windows tools
+- **Threat Intelligence**: IOC lookups triggered via SOAR playbooks with external APIs
+
+---
+
+## Detection & Response Workflow
+
+1. **Simulate Adversary Behavior**  
+   - Brute-force, privilege escalation, and lateral movement via test scripts
+
+2. **Log Forwarding and Ingestion**  
+   - Winlogbeat sends data from endpoints to Splunk for indexing
+
+3. **Correlation and Alerting**  
+   - Splunk queries trigger alerts when suspicious patterns are observed
+
+4. **SOAR Playbook Execution**  
+   - Alerts forward to SOAR which enriches, logs, and simulates containment
+
+5. **Documentation and Reporting**  
+   - Manual or automated generation of incident reports and timelines
 
 ---
 
 ## Repository Structure
-Threat-Detection-Lab/                                                                                                                                                           
-├── detections/ # Custom correlation rules and search queries                                                                                                                                                           
-│ ├── brute_force_detection.md                                                                                                                                                           
-│ └── suspicious_login_alert.md                                                                                                                                                           
-├── playbooks/ # SOAR playbooks (Python / PowerShell)                                                                                                                                                           
-│ ├── enrich_ip_playbook.py                                                                                                                                                           
-│ └── isolate_host_playbook.ps1                                                                                                                                                           
-├── documentation/ # Reports, compliance artifacts, MITRE mappings                                                                                                                                                           
-│ ├── incident_report_template.docx                                                                                                                                                           
-│ └── log_retention_policy.md                                                                                                                                                           
-├── attack-scenarios/ # Steps/scripts to simulate attacks on endpoints                                                                                                                                                           
-│ ├── brute_force_simulation.sh                                                                                                                                                           
-│ └── lateral_movement_scenario.ps1                                                                                                                                                           
-├── threat-intel/ # Scripts and integrations for enrichment                                                                                                                                                           
-│ └── virustotal_lookup.py                                                                                                                                                           
-├── assets/ # [Insert Image Here] Diagrams, screenshots                                                                                                                                                           
-│ └── splunk_dashboard_example.png                                                                                                                                                           
-├── README.md # Project overview (this file)                                                                                                                                                           
-└── detections/README.md # Detailed detection logic and rationale                                                                                                                                                           
-
----
-
-## Tools Used
-
-- **SIEM**: Splunk Free or Splunk Cloud Trial  
-- **SOAR**: Splunk SOAR Community Edition, Shuffle (optional)  
-- **Endpoint Logging**: Sysmon + Winlogbeat  
-- **Automation**: Python, PowerShell  
-- **Threat Intelligence APIs**: VirusTotal, AbuseIPDB  
-- **Compliance Frameworks**: NIST 800-53, MITRE ATT&CK
+Threat-Detection-Lab/
+├── detections/
+│ ├── brute_force_detection.md
+│ └── lateral_movement_query.md
+├── playbooks/
+│ ├── enrich_ip_playbook.py
+│ └── isolate_host_playbook.ps1
+├── attack-scenarios/
+│ ├── simulate_brute_force.ps1
+│ └── invoke_lateral_move.sh
+├── threat-intel/
+│ ├── virustotal_lookup.py
+│ └── abuseipdb_check.py
+├── documentation/
+│ ├── incident_template.md
+│ ├── MITRE_mapping.md
+│ └── log_retention_policy.md
+├── assets/
+│ └── [Insert Image Here]
+├── README.md
+└── LICENSE
 
 ---
 
 ## Recommendations for Future Enhancements
 
-- Integrate endpoint EDR solutions like CrowdStrike or Microsoft Defender ATP for enhanced telemetry.
-- Expand SOAR playbooks to cover containment and recovery phases.
-- Include phishing simulation and email log analysis.
-- Deploy multi-tier attack chains to test kill chain detection in full.
-- Add a Splunk dashboard for compliance auditing and control health status.
+- **Add full EDR telemetry** using Defender ATP or CrowdStrike Free Tier
+- **Expand SOAR playbooks** for full incident lifecycle (containment, eradication, recovery)
+- **Integrate alert ticketing** via ServiceNow or JIRA APIs
+- **Automate IOC submissions** back to intelligence platforms
+- **Build compliance dashboard** in Splunk for log retention and control alignment
 
 ---
 
-> Each major folder includes its own `README.md` explaining setup, logic, and configuration decisions in depth. This main README provides a high-level summary for recruiters, collaborators, and project reviewers.
+## License
 
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
