@@ -154,6 +154,9 @@ Threat-Detection-Lab/
 │ ├── MITRE_mapping.md
 │ └── log_retention_policy.md
 
+├── assets/
+│ └── image_storage.md
+
 ├── README.md
 └── LICENSE
 ```
